@@ -1,101 +1,150 @@
-import Image from "next/image";
+import React from 'react'
+import { Globe, Rocket, Star, Plane, Map, BookOpen } from 'lucide-react'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Section */}
+      <section className="relative h-screen flex flex-col items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[url('/exoplanetBanner.jpeg')] bg-cover bg-center"></div>
+          <div className="absolute inset-0"></div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <div className="relative z-10 text-center space-y-6 px-4 mt-28"> 
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-600">
+            Own a Piece of the Cosmos
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">
+            Secure your plot on distant exoplanets and be part of humanity's cosmic future.
+          </p>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
+            Explore Exoplanets
+          </button>
+        </div>
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <Rocket className="h-8 w-8 text-blue-400" />
+        </div>
+      </section>
+
+
+      {/* What We Offer Section */}
+      <section className="py-20 bg-gray-900">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-white">What We Offer</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { 
+                icon: Globe, 
+                title: "Ownership Certificate", 
+                description: "Receive a personalized certificate proving your ownership of a plot of land on an exoplanet." 
+              },
+              { 
+                icon: Plane, 
+                title: "Boarding Pass", 
+                description: "Get a futuristic boarding pass symbolizing your journey to your designated exoplanet." 
+              },
+              { 
+                icon: Map, 
+                title: "Exoplanet Fact Sheet", 
+                description: "Explore detailed facts about your exoplanet, including its coordinates and unique characteristics." 
+              },
+              { 
+                icon: BookOpen, 
+                title: "Educational Insights", 
+                description: "Learn about exoplanets and gain a deeper understanding of your specific celestial property." 
+              }
+            ].map((feature, index) => (
+              <div key={index} className="bg-gray-800 border border-gray-700 rounded-lg p-6 text-center">
+                <feature.icon className="h-12 w-12 text-blue-400 mb-4 mx-auto" />
+                <h3 className="text-xl font-semibold mb-2 text-white">{feature.title}</h3>
+                <p className="text-gray-400">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* How It Works Section */}
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12">How It Works</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { step: 1, title: "Choose Your Exoplanet", description: "Browse our catalog of verified exoplanets" },
+              { step: 2, title: "Select Your Plot", description: "Pick the perfect location on your chosen world" },
+              { step: 3, title: "Secure Your Ownership", description: "Complete the purchase and receive your digital deed" }
+            ].map((step, index) => (
+              <div key={index} className="text-center">
+                <div className="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                  {step.step}
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+                <p className="text-gray-400">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-20 bg-gray-900">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-white">
+            Choose Your Cosmic Real Estate
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              { 
+                title: "1 Acre of Land", 
+                price: "$20", 
+                features: [
+                  "Certificate of Authenticity",
+                  "Boarding Pass for Your Exoplanet",
+                  "Fact Sheet About Your Exoplanet (Coordinates, Details, and More)",
+                  "Educational Fact Sheet About Exoplanets"
+                ] 
+              },
+              { 
+                title: "10 Acres of Land", 
+                price: "$40", 
+                features: [
+                  "Certificate of Authenticity",
+                  "Boarding Pass for Your Exoplanet",
+                  "Fact Sheet About Your Exoplanet (Coordinates, Details, and More)",
+                  "Educational Fact Sheet About Exoplanets"
+                ] 
+              }
+            ].map((plan, index) => (
+              <div key={index} className="bg-gray-800 border border-gray-700 rounded-lg p-6 text-center">
+                <h3 className="text-2xl font-bold mb-2 text-white">{plan.title}</h3>
+                <p className="text-4xl font-bold text-blue-400 mb-4">{plan.price}</p>
+                <ul className="space-y-2 mb-6 text-gray-300">
+                  {plan.features.map((feature, fIndex) => (
+                    <li key={fIndex} className="flex items-center justify-center">
+                      <Star className="h-5 w-5 text-yellow-400 mr-2" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                  Claim Your Plot
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* Footer */}
+      <footer className="bg-gray-900 py-8">
+        <div className="container mx-auto px-4 text-center text-gray-400">
+          <p>&copy; 2025 Cosmic Real Estate, Inc. All rights reserved.</p>
+          <p className="mt-2">Disclaimer: Exoplanet ownership is conceptual and for entertainment purposes only.</p>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
+
